@@ -46,9 +46,9 @@ export default function Story() {
             <div className="absolute inset-0 translate-x-2 translate-y-2 border border-violet-400/20" />
             <div className="relative w-full h-full overflow-hidden border border-zinc-800">
                 <img
-                src="/headshot.jpg"
+                src="/story/me.jpg"
                 alt="Anitej Isaac Sharma"
-                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                className="w-full h-full object-cover scale-120 object-bottom grayscale hover:grayscale-0 transition-all duration-500"
                 />
                 <div className="absolute inset-0 bg-zinc-900 flex items-center justify-center -z-10">
                 <span className="font-mono text-zinc-600 text-xs">photo</span>
@@ -58,10 +58,10 @@ export default function Story() {
 
             <div className="mt-14 space-y-6 font-mono text-zinc-400 text-sm leading-[1.9]">
             <p>
-                I'm <span className="text-white">Anitej Isaac Sharma</span> — a software engineer,
+                I'm <span className="text-white">Anitej Isaac Sharma</span> - a software engineer,
                 photographer, and writer based in{" "}
                 <span className="text-white">Vancouver, BC</span>. I build things on the internet,
-                carry a camera everywhere I go, and write when I need to think clearly.
+                carry a camera (well actually, my phone) everywhere I go, and write when I need to think clearly.
             </p>
 
             <p>
@@ -71,13 +71,12 @@ export default function Story() {
             </p>
 
             <p>
-                By day I work on software — mostly web, sometimes systems, always trying to make
-                things that feel considered and intentional. I care about the craft: not just
+                By day I work on software — jury management systems and support clients to the best of my abilities. I care about the craft: not just
                 whether it works, but whether it's elegant, whether someone will enjoy using it.
             </p>
 
             <p>
-                Photography came later but stuck fast. There's something about the discipline of
+                Photography came much earlier and stuck fast. There's something about the discipline of
                 framing — deciding what's in and what's out — that I find meditative. I shoot
                 mostly street and landscape, mostly on the West Coast, occasionally wherever else
                 life takes me. You can follow along at{" "}
@@ -94,8 +93,7 @@ export default function Story() {
 
             <p>
                 Writing is how I process. Essays when something's been sitting in my head too long.
-                Poems when prose feels too heavy. Thoughts when it's just a fragment that needed
-                somewhere to land. The notebook is all of the above.
+                Poems when prose feels too heavy and I just want life to rhyme. Thoughts when it's just a fragment that needed somewhere to land. The notebook is all of the above.
             </p>
 
             <p>
@@ -109,8 +107,8 @@ export default function Story() {
             {[
                 { label: "Based in", value: "Vancouver, BC" },
                 { label: "Currently", value: "Building & writing" },
-                { label: "Camera", value: "Sony α7 IV" },
-                { label: "Editor", value: "Neovim, obviously" },
+                { label: "Camera", value: "iPhone" },
+                { label: "Editor", value: "iOS Photos App (lol)" },
             ].map(({ label, value }) => (
                 <div key={label}>
                 <p className="font-mono text-xs text-zinc-600 uppercase tracking-widest mb-1">{label}</p>
@@ -123,8 +121,8 @@ export default function Story() {
 
             <div className="mt-8 flex flex-wrap gap-6">
             {[
-                { label: "GitHub", href: "https://github.com" },
-                { label: "Instagram", href: "https://instagram.com/ipic2capture" },
+                { label: "GitHub", href: "https://github.com/aisaaxs" },
+                { label: "Instagram", href: "https://instagram.com/aisaaxs" },
                 { label: "Ping me", href: "/ping" },
             ].map(({ label, href }) => (
                 <a

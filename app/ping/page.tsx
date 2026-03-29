@@ -70,18 +70,18 @@ export default function Ping() {
             {[
                 {
                 label: "Email directly",
-                href: "mailto:hello@anitej.dev",
-                value: "hello@anitej.dev",
+                href: "mailto:anitejsharmas@gmail.com",
+                value: "anitejsharmas@gmail.com",
                 },
                 {
                 label: "Instagram",
-                href: "https://instagram.com/ipic2capture",
-                value: "@ipic2capture",
+                href: "https://instagram.com/aisaaxs",
+                value: "@aisaaxs",
                 },
                 {
                 label: "GitHub",
-                href: "https://github.com",
-                value: "github.com/anitej",
+                href: "https://github.com/aisaaxs",
+                value: "github.com/aisaaxs",
                 },
             ].map(({ label, href, value }) => (
                 <a
