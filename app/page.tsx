@@ -62,7 +62,7 @@ export default function Home() {
           transition: "opacity 0.8s ease, transform 0.8s ease",
         }}
       >
-        <p className="font-mono text-xs text-zinc-500 tracking-[0.3em] uppercase">
+        <p className="font-mono text-xs text-zinc-400 tracking-[0.3em] uppercase">
           portfolio
         </p>
 
