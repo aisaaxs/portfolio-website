@@ -3,9 +3,9 @@
 import { useEffect, useState, useRef } from "react";
 
 const roles = [
-  { text: "I build software", color: "text-rose-500" },
-  { text: "I capture moments", color: "text-lime-500" },
-  { text: "I craft words", color: "text-amber-500" },
+  { text: "I build software" },
+  { text: "I capture moments" },
+  { text: "I craft words" },
 ];
 
 export default function Home() {
@@ -72,10 +72,7 @@ export default function Home() {
         >
           Anitej
           <br />
-          <span
-            className="text-transparent bg-clip-text"
-            style={{ backgroundImage: "linear-gradient(90deg, #38bdf8, #818cf8)" }}
-          >
+          <span>
             Isaac
           </span>
           {" "}Sharma
@@ -91,7 +88,7 @@ export default function Home() {
 
         <div className="h-8 flex items-center justify-center">
           <span
-            className={`font-mono text-lg font-light italic transition-all duration-300 ${current.color}`}
+            className={`font-mono text-lg font-light italic transition-all duration-300 text-sky-400`}
             style={{
               opacity: fading ? 0 : 1,
               transform: fading ? "translateY(6px)" : "translateY(0)",
