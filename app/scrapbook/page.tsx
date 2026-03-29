@@ -3,48 +3,69 @@
 import { useEffect, useRef, useState } from "react";
 
 const photos = [
-  {
-    src: "/photos/photo1.jpg",
-    alt: "Golden hour on the water",
-    description: "Light hitting just right — that magic 20 minutes before the sun disappears.",
-    location: "Vancouver, BC",
-    rotate: "3deg",
-  },
-  {
-    src: "/photos/photo2.jpg",
-    alt: "City after rain",
-    description: "Everything gets a second skin when it rains. Streets become mirrors.",
-    location: "Downtown Vancouver",
-    rotate: "-3deg",
-  },
-  {
-    src: "/photos/photo3.jpg",
-    alt: "Fog in the mountains",
-    description: "The mountains don't disappear in the fog — they just become suggestions.",
-    location: "North Shore Mountains",
-    rotate: "-1deg",
-  },
-  {
-    src: "/photos/photo4.jpg",
-    alt: "Quiet café corner",
-    description: "Some places hold their breath. You can feel it when you walk in.",
-    location: "Gastown, Vancouver",
-    rotate: "1deg",
-  },
-  {
-    src: "/photos/photo5.jpg",
-    alt: "Lone tree at dusk",
-    description: "Standing against everything, going nowhere. That's a tree for you.",
-    location: "Richmond, BC",
-    rotate: "2deg",
-  },
-  {
-    src: "/photos/photo6.jpg",
-    alt: "Long exposure traffic",
-    description: "Cities breathe at night. This is what a breath looks like.",
-    location: "Granville Bridge",
-    rotate: "-2deg",
-  },
+    {
+        src: "/scrapbook/buildings-in-contrast.jpg",
+        alt: "Old Meets New",
+        description: "A century of architecture stacked in one frame. The old hotel holds its ground while glass towers climb past it — Vancouver refusing to pick a decade.",
+        location: "Vancouver, BC, Canada",
+        rotate: "3deg",
+    },
+    {
+        src: "/scrapbook/burning-dusk.jpg",
+        alt: "Kelowna Sunset Commute",
+        description: "Everyone's rushing somewhere and nobody's looking up. The sky was on fire and the mountains were right there.",
+        location: "Kelowna, BC, Canada",
+        rotate: "3deg",
+    },
+    {
+        src: "/scrapbook/cat.jpg",
+        alt: "Green-Eyed Calico",
+        description: "She looked at me the way cats always do — like I was the guest and she was tolerating it. Those eyes though.",
+        location: "Kelowna, BC, Canada",
+        rotate: "3deg",
+    },
+    {
+        src: "/scrapbook/chameleon.jpg",
+        alt: "Veiled Chameleon On A Branch",
+        description: "Every scale catches the light differently. Sat perfectly still for exactly as long as it wanted to, then didn't.",
+        location: "Vancouver, BC, Canada",
+        rotate: "0deg",
+    },
+    {
+        src: "/scrapbook/colorful-sky.jpg",
+        alt: "Vibrant Sky Over Brick Walls",
+        description: "Shot straight up from a narrow lane. The sky was doing something absurd with colour and the buildings just framed it.",
+        location: "Gurugram, HR, India",
+        rotate: "0deg",
+    },
+    {
+        src: "/scrapbook/mustang-in-kelowna.jpg",
+        alt: "Blue Mustang, Golden Hour",
+        description: "Stumbled across this in a parking lot. Low sun, lens flare, perfect light — some shots just hand themselves to you.",
+        location: "Kelowna, BC, Canada",
+        rotate: "0deg",
+    },
+    {
+        src: "/scrapbook/spider.jpg",
+        alt: "Spider Above The Highway",
+        description: "Spotted this at night with a streetlight behind it. The web caught everything — light, shadow, geometry.",
+        location: "Kelowna, BC, Canada",
+        rotate: "-3deg",
+    },
+    {
+        src: "/scrapbook/van-downtown-glow.jpg",
+        alt: "Vancouver Dusk Street",
+        description: "That hour just after sunset when the city lights up from inside. Everything wet, everything glowing. Vancouver at its most cinematic.",
+        location: "Vancouver, BC, Canada",
+        rotate: "-3deg",
+    },
+    {
+        src: "/scrapbook/whytecliffe.jpg",
+        alt: "Whytecliffe Island At Sunset",
+        description: "Tiny people on top of that rock, sky melting into peach and blue behind them. The whole scene felt borrowed from somewhere quieter.",
+        location: "West Vancouver, BC, Canada",
+        rotate: "-3deg",
+    },
 ];
 
 function PhotoCard({
