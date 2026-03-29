@@ -36,11 +36,11 @@ export default function Home() {
     <div className="relative min-h-screen bg-black flex flex-col justify-center items-center overflow-hidden px-6">
 
       <div
-        className="absolute inset-0 opacity-[0.15]"
+        className="fixed inset-0 pointer-events-none opacity-[0.08]"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
+            "linear-gradient(rgba(255,255,255,0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.8) 1px, transparent 1px)",
+          backgroundSize: "40px 40px",
         }}
       />
 
