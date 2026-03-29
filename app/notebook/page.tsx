@@ -244,105 +244,113 @@ export default function Notebook() {
 
   return (
     <div className="min-h-screen bg-zinc-950 relative">
-      <div
-        className="fixed top-0 right-0 w-125 h-125 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(251,191,36,0.05) 0%, transparent 70%)",
-        }}
-      />
-
-      <div className="relative z-10 max-w-4xl mx-auto px-6 pt-36 pb-28">
         <div
-          style={{
-            opacity: mounted ? 1 : 0,
-            transform: mounted ? "none" : "translateY(16px)",
-            transition: "opacity 0.7s ease, transform 0.7s ease",
-          }}
-        >
-          <p className="font-mono text-xs text-zinc-600 tracking-[0.3em] uppercase mb-4">
-            essays · poems · thoughts
-          </p>
-          <h1
-            className="font-serif font-bold text-white leading-none"
-            style={{ fontSize: "clamp(2.5rem, 7vw, 5rem)" }}
-          >
-            Notebook
-          </h1>
-          <div className="mt-4 h-px w-24 bg-linear-to-r from-amber-400/60 to-transparent" />
-          <p className="mt-5 font-mono text-zinc-400 text-sm max-w-md leading-relaxed">
-            Things I needed to write down. Some long, some short, some barely
-            sentences.
-          </p>
-        </div>
-
-        {featured && (
-          <div className="mt-16">
-            <FeaturedPost post={featured} />
-          </div>
-        )}
-
+            className="fixed inset-0 pointer-events-none opacity-[0.08]"
+            style={{
+            backgroundImage:
+                "linear-gradient(rgba(255,255,255,0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.8) 1px, transparent 1px)",
+            backgroundSize: "40px 40px",
+            }}
+        />
         <div
-          className="mt-16 mb-2 flex items-center gap-1 border-b border-zinc-900 pb-0"
-          style={{
-            opacity: mounted ? 1 : 0,
-            transition: "opacity 0.6s ease 0.2s",
-          }}
-        >
-          {(["all", "essays", "poems", "thoughts"] as Category[]).map((cat) => {
-            const isActive = filter === cat;
-            const meta = cat !== "all" ? categoryMeta[cat] : null;
-            return (
-              <button
-                key={cat}
-                onClick={() => setFilter(cat)}
-                className={`relative font-mono text-xs uppercase tracking-widest px-4 py-3 transition-all duration-200 ${
-                  isActive ? "text-white" : "text-zinc-600 hover:text-zinc-400"
-                }`}
-              >
-                {cat}
-                {isActive && (
-                  <span
-                    className={`absolute bottom-0 left-0 right-0 h-px ${
-                      meta ? meta.dot : "bg-white"
+            className="fixed top-0 right-0 w-125 h-125 pointer-events-none"
+            style={{
+            background:
+                "radial-gradient(circle, rgba(251,191,36,0.05) 0%, transparent 70%)",
+            }}
+        />
+
+        <div className="relative z-10 max-w-4xl mx-auto px-6 pt-36 pb-28">
+            <div
+            style={{
+                opacity: mounted ? 1 : 0,
+                transform: mounted ? "none" : "translateY(16px)",
+                transition: "opacity 0.7s ease, transform 0.7s ease",
+            }}
+            >
+            <p className="font-mono text-xs text-zinc-600 tracking-[0.3em] uppercase mb-4">
+                essays · poems · thoughts
+            </p>
+            <h1
+                className="font-serif font-bold text-white leading-none"
+                style={{ fontSize: "clamp(2.5rem, 7vw, 5rem)" }}
+            >
+                Notebook
+            </h1>
+            <div className="mt-4 h-px w-24 bg-linear-to-r from-amber-400/60 to-transparent" />
+            <p className="mt-5 font-mono text-zinc-400 text-sm max-w-md leading-relaxed">
+                Things I needed to write down. Some long, some short, some barely
+                sentences.
+            </p>
+            </div>
+
+            {featured && (
+            <div className="mt-16">
+                <FeaturedPost post={featured} />
+            </div>
+            )}
+
+            <div
+            className="mt-16 mb-2 flex items-center gap-1 border-b border-zinc-900 pb-0"
+            style={{
+                opacity: mounted ? 1 : 0,
+                transition: "opacity 0.6s ease 0.2s",
+            }}
+            >
+            {(["all", "essays", "poems", "thoughts"] as Category[]).map((cat) => {
+                const isActive = filter === cat;
+                const meta = cat !== "all" ? categoryMeta[cat] : null;
+                return (
+                <button
+                    key={cat}
+                    onClick={() => setFilter(cat)}
+                    className={`relative font-mono text-xs uppercase tracking-widest px-4 py-3 transition-all duration-200 ${
+                    isActive ? "text-white" : "text-zinc-600 hover:text-zinc-400"
                     }`}
-                  />
-                )}
-              </button>
-            );
-          })}
-          <span className="ml-auto font-mono text-xs text-zinc-700">
-            {filtered.length} {filtered.length === 1 ? "entry" : "entries"}
-          </span>
-        </div>
+                >
+                    {cat}
+                    {isActive && (
+                    <span
+                        className={`absolute bottom-0 left-0 right-0 h-px ${
+                        meta ? meta.dot : "bg-white"
+                        }`}
+                    />
+                    )}
+                </button>
+                );
+            })}
+            <span className="ml-auto font-mono text-xs text-zinc-700">
+                {filtered.length} {filtered.length === 1 ? "entry" : "entries"}
+            </span>
+            </div>
 
-        <div>
-          {filtered.map((post, i) => (
-            <PostRow key={post.slug} post={post} index={i} />
-          ))}
-        </div>
+            <div>
+            {filtered.map((post, i) => (
+                <PostRow key={post.slug} post={post} index={i} />
+            ))}
+            </div>
 
-        {filtered.length === 0 && (
-          <div className="py-20 text-center">
-            <p className="font-mono text-zinc-600 text-sm">Nothing here yet.</p>
-          </div>
-        )}
+            {filtered.length === 0 && (
+            <div className="py-20 text-center">
+                <p className="font-mono text-zinc-600 text-sm">Nothing here yet.</p>
+            </div>
+            )}
 
-        <div
-          className="mt-20 pt-8 border-t border-zinc-900 flex items-center justify-between"
-          style={{
-            opacity: mounted ? 1 : 0,
-            transition: "opacity 0.8s ease 0.5s",
-          }}
-        >
-          <p className="font-mono text-xs text-zinc-700 italic">
-            "Writing is thinking on paper."
-          </p>
-          <p className="font-mono text-xs text-zinc-700">
-            Anitej Isaac Sharma
-          </p>
+            <div
+            className="mt-20 pt-8 border-t border-zinc-900 flex items-center justify-between"
+            style={{
+                opacity: mounted ? 1 : 0,
+                transition: "opacity 0.8s ease 0.5s",
+            }}
+            >
+            <p className="font-mono text-xs text-zinc-700 italic">
+                "Writing is thinking on paper."
+            </p>
+            <p className="font-mono text-xs text-zinc-700">
+                Anitej Isaac Sharma
+            </p>
+            </div>
         </div>
-      </div>
     </div>
   );
 }
