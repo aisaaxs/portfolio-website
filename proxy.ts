@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
-const DISABLED_ROUTES = ['/builds', '/notebook'];
+const DISABLED_ROUTES = ['/notebook'];
 
 export function proxy(request: NextRequest) {
   if (DISABLED_ROUTES.includes(request.nextUrl.pathname)) {
@@ -12,5 +12,5 @@ export function proxy(request: NextRequest) {
 
 
 export const config = {
-    matcher: ['/builds/:path*', '/notebook/:path*'],
+    matcher: ['/notebook/:path*'],
 };

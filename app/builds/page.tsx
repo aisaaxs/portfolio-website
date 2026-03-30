@@ -4,70 +4,14 @@ import { useEffect, useRef, useState } from "react";
 
 const projects = [
   {
-    name: "Lumina",
-    tagline: "AI-powered journaling with mood tracking",
+    name: "Medsim Innovations Website",
+    tagline: "Improving healthcare education through affordable medical simulation technologies",
     description:
-      "A journaling app that uses NLP to detect emotional patterns over time, surface insights, and gently nudge you toward reflection. Built with Next.js, OpenAI, and Supabase.",
-    tags: ["Next.js", "OpenAI", "Supabase", "TypeScript"],
-    links: { github: "https://github.com", live: "https://example.com" },
-    featured: true,
-    year: "2025",
+      "A modern, responsive website for MedSim Innovations that showcases the company's mission, values, and simulation‑based training philosophy while highlighting its products and value pillars. Built for nursing colleges, medical colleges, and hospitals to learn about and connect with the company.",
+    tags: ["Next.js", "TypeScript", "Prisma", "Vercel", "Tailwind"],
+    links: { github: "https://github.com/MedSim-Innovations/website", live: "https://www.medsiminnovations.com" },
+    year: "2026",
     accent: "rose",
-  },
-  {
-    name: "Patchwork",
-    tagline: "Visual dependency graph for monorepos",
-    description:
-      "A CLI + web viewer that parses your monorepo and renders an interactive dependency graph. Helped our team cut circular dependencies by 40%.",
-    tags: ["Rust", "D3.js", "TypeScript", "CLI"],
-    links: { github: "https://github.com" },
-    featured: true,
-    year: "2025",
-    accent: "sky",
-  },
-  {
-    name: "Serif",
-    tagline: "Minimal markdown editor for writers",
-    description:
-      "A distraction-free writing environment with local-first storage, custom themes, and export to PDF/HTML. No accounts, no cloud, just writing.",
-    tags: ["Tauri", "React", "Rust", "SQLite"],
-    links: { github: "https://github.com", live: "https://example.com" },
-    featured: false,
-    year: "2024",
-    accent: "amber",
-  },
-  {
-    name: "Snaproute",
-    tagline: "Travel itinerary builder from your photos",
-    description:
-      "Drop in your travel photos and it extracts GPS metadata, clusters by location, and auto-builds a shareable itinerary. Powered by EXIF parsing and Mapbox.",
-    tags: ["Python", "FastAPI", "React", "Mapbox"],
-    links: { github: "https://github.com" },
-    featured: false,
-    year: "2024",
-    accent: "lime",
-  },
-  {
-    name: "Threadcount",
-    tagline: "Twitter/X thread reader, distilled",
-    description:
-      "Paste any thread URL and get a clean, typeset read with estimated read time, saved offline. No ads, no sidebar chaos.",
-    tags: ["Next.js", "Vercel", "TypeScript"],
-    links: { github: "https://github.com", live: "https://example.com" },
-    featured: false,
-    year: "2023",
-    accent: "violet",
-  },
-  {
-    name: "Beacon",
-    tagline: "Uptime monitor with beautiful status pages",
-    description:
-      "Self-hostable uptime monitoring with configurable checks, webhook alerts, and auto-generated public status pages. Deploy in one Docker command.",
-    tags: ["Go", "React", "Docker", "PostgreSQL"],
-    links: { github: "https://github.com" },
-    featured: false,
-    year: "2023",
-    accent: "orange",
   },
 ];
 
@@ -122,7 +66,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
                 {project.name}
             </h2>
             <p className={`font-mono text-sm mb-4 ${accent.text}`}>{project.tagline}</p>
-            <p className="font-mono text-zinc-400 text-sm leading-relaxed max-w-lg">
+            <p className="font-mono text-zinc-400 text-sm leading-relaxed max-w-3xl">
                 {project.description}
             </p>
             <div className="flex flex-wrap gap-2 mt-6">
@@ -226,7 +170,7 @@ export default function Builds() {
                 All projects are personal work unless noted otherwise.
             </p>
             <a
-                href="https://github.com"
+                href="https://github.com/aisaaxs"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 font-mono text-xs text-zinc-500 hover:text-white transition-colors duration-200"
@@ -234,7 +178,7 @@ export default function Builds() {
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
                 </svg>
-                View all on GitHub ↗
+                View my GitHub profile ↗
             </a>
             </div>
         </div>

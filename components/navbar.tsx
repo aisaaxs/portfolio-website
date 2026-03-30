@@ -5,7 +5,7 @@ import { useState } from "react";
 
 const navOptions = [
     { text: "home", href: "/", color: "bg-sky-400", dot: "bg-sky-400" },
-    // { text: "builds", href: "/builds", color: "bg-rose-400", dot: "bg-rose-400" },
+    { text: "builds", href: "/builds", color: "bg-rose-400", dot: "bg-rose-400" },
     { text: "scrapbook", href: "/scrapbook", color: "bg-lime-400", dot: "bg-lime-400" },
     // { text: "notebook", href: "/notebook", color: "bg-amber-400", dot: "bg-amber-400" },
     { text: "story", href: "/story", color: "bg-violet-400", dot: "bg-violet-400" },

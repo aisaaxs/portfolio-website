@@ -48,7 +48,7 @@ export default function Story() {
                 <img
                 src="/story/me.jpg"
                 alt="Anitej Isaac Sharma"
-                className="w-full h-full object-cover scale-120 object-bottom grayscale hover:grayscale-0 transition-all duration-500"
+                className="w-full h-full object-cover scale-120 object-bottom"
                 />
                 <div className="absolute inset-0 bg-zinc-900 flex items-center justify-center -z-10">
                 <span className="font-mono text-zinc-600 text-xs">photo</span>

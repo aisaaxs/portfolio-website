@@ -77,6 +77,7 @@ function PhotoCard({
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
+  const [tapped, setTapped] = useState(false);
 
   useEffect(() => {
     const el = ref.current;
@@ -98,6 +99,7 @@ function PhotoCard({
     <div
       ref={ref}
       className="group relative bg-zinc-900 cursor-pointer"
+      onClick={() => setTapped((t) => !t)}
       style={{
         transform: visible
           ? `rotate(${photo.rotate})`
@@ -129,18 +131,26 @@ function PhotoCard({
             }}
           />
 
-          <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+          <div
+            className={`absolute inset-0 bg-black/70 transition-opacity duration-300 flex flex-col justify-end p-4 ${
+              tapped ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+            }`}
+          >
             <p className="font-mono text-white text-sm leading-relaxed">
               {photo.description}
             </p>
             <p className="font-mono text-zinc-400 text-xs mt-2">
               📍 {photo.location}
             </p>
+            <p className="font-mono text-zinc-600 text-xs mt-3 md:hidden">
+              tap again to close
+            </p>
           </div>
         </div>
       </div>
-      <div className="px-3 py-3">
+      <div className="px-3 py-3 flex items-center justify-between">
         <p className="font-mono text-zinc-500 text-xs truncate">{photo.alt}</p>
+        <p className="font-mono text-zinc-700 text-xs md:hidden shrink-0 ml-2">tap ↑</p>
       </div>
     </div>
   );
@@ -192,7 +202,7 @@ export default function Scrapbook() {
           </h1>
           <div className="mt-4 h-px w-24 bg-linear-to-r from-lime-400/60 to-transparent" />
           <p className="mt-5 font-mono text-zinc-400 text-sm max-w-md leading-relaxed">
-            Moments I couldn't walk past. Hover over any photo to read the
+            Moments I couldn't walk past. Hover over (or tap, if you're on a phone) any photo to read the
             story behind it.
           </p>
         </div>
