@@ -5,7 +5,7 @@ import { useState } from "react";
 
 const navOptions = [
     { text: "home", href: "/", color: "bg-sky-400", dot: "bg-sky-400" },
-    { text: "builds", href: "/builds", color: "bg-rose-400", dot: "bg-rose-400" },
+    // { text: "builds", href: "/builds", color: "bg-rose-400", dot: "bg-rose-400" },
     { text: "scrapbook", href: "/scrapbook", color: "bg-lime-400", dot: "bg-lime-400" },
     // { text: "notebook", href: "/notebook", color: "bg-amber-400", dot: "bg-amber-400" },
     { text: "story", href: "/story", color: "bg-violet-400", dot: "bg-violet-400" },
@@ -20,8 +20,6 @@ export default function Navbar() {
 
     return (
         <nav className="fixed top-0 left-0 right-0 z-50 w-full flex justify-center pt-5 px-4">
-
-            {/* Desktop pill */}
             <div className="hidden md:flex w-auto h-11 rounded-full bg-zinc-900/90 backdrop-blur-md border border-zinc-800 px-2 items-center gap-1">
                 {navOptions.map((option, i) => {
                     const isActive = pathname === option.href;
@@ -40,12 +38,8 @@ export default function Navbar() {
                     );
                 })}
             </div>
-
-            {/* Mobile pill */}
             <div className="flex md:hidden w-full max-w-sm">
                 <div className="w-full rounded-2xl bg-zinc-900/95 backdrop-blur-md border border-zinc-800 overflow-hidden">
-
-                    {/* Mobile header row */}
                     <div className="flex items-center justify-between px-5 h-12">
                         <div className="flex items-center gap-2">
                             {active && <span className={`w-2 h-2 rounded-full ${active.dot}`} />}
@@ -64,7 +58,6 @@ export default function Navbar() {
                         </button>
                     </div>
 
-                    {/* Mobile dropdown */}
                     <div
                         className="overflow-hidden transition-all duration-300 ease-in-out"
                         style={{ maxHeight: menuOpen ? "300px" : "0px" }}
