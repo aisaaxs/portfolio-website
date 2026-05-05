@@ -23,7 +23,7 @@ export default function HomeClient() {
   }, []);
 
   return (
-    <div className="w-screen h-screen flex justify-center items-center p-12">
+    <div className="w-screen h-screen flex justify-center items-center p-20">
       <div className="flex flex-col items-center text-center gap-y-8 z-10"
         style={{
           opacity: mounted ? 1 : 0,
