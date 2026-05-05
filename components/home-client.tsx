@@ -23,7 +23,7 @@ export default function HomeClient() {
   }, []);
 
   return (
-    <div className="w-screen h-screen flex justify-center items-center p-20">
+    <div className="w-screen h-screen flex justify-center items-center p-12">
       <div className="flex flex-col items-center text-center gap-y-8 z-10"
         style={{
           opacity: mounted ? 1 : 0,
@@ -33,7 +33,7 @@ export default function HomeClient() {
       >
         <p className="text-zinc-400 uppercase text-xs sm:text-sm font-mono tracking-widest">portfolio</p>
 
-        <h1 className="font-serif text-white md:text-[7rem] sm:text-[6rem] text-[4rem] font-bold tracking-tight leading-none">
+        <h1 className="font-serif text-white md:text-[7rem] sm:text-[6rem] text-[4rem] font-bold tracking-tight leading-none ">
             <span className="block">Anitej</span>
             <span className="block">Isaac Sharma</span>
         </h1>
