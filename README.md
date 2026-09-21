@@ -1,1 +1,0 @@
-# Anitej Isaac Sharma
