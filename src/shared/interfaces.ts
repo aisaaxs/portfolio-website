@@ -16,3 +16,10 @@ export interface experienceInterface {
     dateRange: string,
     highlights: string
 }
+
+export interface photographyInterface {
+    image: StaticImageData;
+    description: string;
+    location: string;
+    title: string;
+}

@@ -3,7 +3,7 @@ import { projectsData } from "@/src/data/projects";
 
 export default function Projects() {
     return (
-        <section id="projects" className="bg-gray-100 w-full h-auto lg:mt-12 p-12 flex flex-col">
+        <section id="projects" className="bg-zinc-200 w-full h-auto lg:mt-12 p-12 flex flex-col">
             <div className="w-full h-12 flex justify-start items-start">
                 <h2 className="text-sm font-bold capitalize text-amber-900">02 / Projects With Purpose</h2>
             </div>

@@ -1,6 +1,6 @@
 import { projectInterface } from "@/src/shared/interfaces";
-import clearjarDashboardImage from "@/public/images/clearjar-dashboard.jpeg";
-import medsimInnovationsHomePage from "@/public/images/medsim-innovations-home-page.png";
+import clearjarDashboardImage from "@/public/images/projects/clearjar-dashboard.jpeg";
+import medsimInnovationsHomePage from "@/public/images/projects/medsim-innovations-home-page.png";
 
 export const projectsData: projectInterface[] = [
     {

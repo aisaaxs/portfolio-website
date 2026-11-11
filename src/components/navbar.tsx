@@ -21,7 +21,7 @@ const navItems: NavItem[] = [
     { label: "about", id: "about" },
     { label: "projects", id: "projects" },
     { label: "experience", id: "experience" },
-    { label: "notebook", id: "notebook" },
+    // { label: "notebook", id: "notebook" },
     { label: "photography", id: "photography" },
     { label: "currently exploring", id: "currently-exploring" },
     { label: "let's talk", id: "lets-talk" },
@@ -76,7 +76,7 @@ export default function Navbar() {
                 <div className="w-auto h-full flex justify-start items-center">
                     <Link 
                         href="/" 
-                        className={`${goldman.className} px-3 py-2 rounded-lg text-md tracking-wider transition-all duration-300 transform active:scale-95`}
+                        className={`${goldman.className} px-3 py-2 rounded-lg text-lg tracking-wider transition-all duration-300 transform active:scale-95`}
                     >
                         @aisaaxs / portfolio
                     </Link>

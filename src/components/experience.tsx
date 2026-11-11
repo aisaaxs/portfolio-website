@@ -7,7 +7,7 @@ export default function Experience() {
                 <h2 className="text-sm font-bold capitalize text-amber-900">03 / Where I&apos;ve Made An Impact</h2>
             </div>
 
-            <div className="w-full h-auto flex flex-col justify-start items-center mt-12">
+            <div className="w-full h-auto flex flex-col justify-start items-center">
                 {
                     experienceData.map((experience, index) => (
                         <div key={index} className={`w-full h-auto flex ${index % 2 === 0 ? "flex-row-reverse lg:flex-row" : "flex-row-reverse"}`}>

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import comicWaterfallSelfie from "@/public/images/comic-waterfall-selfie.png";
+import comicWaterfallSelfie from "@/public/images/about/comic-waterfall-selfie.png";
 
 export default function About() {
     return (
