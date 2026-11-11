@@ -1,5 +1,5 @@
 import { projectInterface } from "@/src/shared/interfaces";
-import clearjarDashboardImage from "@/public/images/projects/clearjar-dashboard.jpeg";
+import clearjarDashboard from "@/public/images/projects/clearjar-dashboard.jpeg";
 import medsimInnovationsHomePage from "@/public/images/projects/medsim-innovations-home-page.png";
 
 export const projectsData: projectInterface[] = [
@@ -9,7 +9,7 @@ export const projectsData: projectInterface[] = [
         description: "ClearJar brings clarity to personal finance with AI-powered insights, smart transaction analysis, and interactive dashboards that turn financial data into confident decisions. Built with precision through the Software Development Life Cycle (SDLC), test-driven development (TDD), and Agile practices, ClearJar combines intelligent design with reliable engineering to make money management effortless.",
         techStack: "Next.js / Prisma ORM / PostgreSQL / Pinecone / Plaid / OpenAI API / NextAuth",
         dateRange: "September 2024 — April 2025",
-        image: clearjarDashboardImage
+        image: clearjarDashboard
     },
     {
         title: "MedSim Innovations",

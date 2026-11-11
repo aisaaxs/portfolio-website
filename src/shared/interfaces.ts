@@ -11,7 +11,8 @@ export interface projectInterface {
 
 export interface experienceInterface {
     position: string,
-    company: string,
+    companyName: string,
+    companyLogo: StaticImageData;
     description: string,
     dateRange: string,
     highlights: string
@@ -22,4 +23,9 @@ export interface photographyInterface {
     description: string;
     location: string;
     title: string;
+}
+
+export interface footerInterface {
+    label: string;
+    href: string;
 }

@@ -4,7 +4,6 @@ import Projects from "@/src/components/projects";
 import Experience from "@/src/components/experience";
 import Photography from "@/src/components/photography";
 // import Notebook from "@/src/components/notebook";
-import CurrentlyExploring from "@/src/components/currently-exploring";
 import LetsTalk from "@/src/components/lets-talk";
 import Footer from "@/src/components/footer";
 
@@ -17,7 +16,6 @@ export default function Portfolio() {
       <Experience />
       <Photography />
       {/* <Notebook /> */}
-      <CurrentlyExploring />
       <LetsTalk />
       <Footer />
     </main>

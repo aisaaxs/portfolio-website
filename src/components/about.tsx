@@ -3,14 +3,14 @@ import comicWaterfallSelfie from "@/public/images/about/comic-waterfall-selfie.p
 
 export default function About() {
     return (
-        <section id="about" className="w-full h-auto p-12 flex flex-col">
+        <section id="about" className="scroll-mt-20 w-full h-auto p-12 flex flex-col">
             <div className="w-full h-12 flex justify-start items-start">
                 <h2 className="text-sm font-bold capitalize text-amber-900">01 / A Little About Me</h2>
             </div>
 
             <div className="w-full h-auto flex flex-col lg:flex-row">
                 <div className="w-full h-auto flex flex-col gap-y-4">
-                    <Image src={comicWaterfallSelfie} alt="Comic Waterfall Selfie" className="w-full h-full xl:h-160 bg-contain rounded-lg" />
+                    <Image loading="eager" src={comicWaterfallSelfie} alt="Comic Waterfall Selfie" className="w-full h-full xl:h-160 bg-contain rounded-lg" />
 
                     <div className="w-full h-auto bg-lime-200 rounded-lg border-2 border-lime-500 text-lime-800 flex flex-col justify-start items-start text-left px-8 py-4 gap-y-4">
                         <h3 className="text-md font-bold">Did You Know?</h3>
