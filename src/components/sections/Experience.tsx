@@ -1,90 +1,98 @@
 import { experienceData } from "@/src/data/experiences"
 import Image from "next/image";
 
+// Combine the experience timeline with a concise skills and credentials summary.
 export default function Experience() {
     return (
-        <section id="experience" className="scroll-mt-20 w-full h-auto p-12 flex flex-col bg-[#fff8dc]">
-            <div className="w-full h-12 flex justify-start items-start">
-                <h2 className="text-sm font-bold capitalize text-amber-900">03 / Where I&apos;ve Made An Impact</h2>
+        <section id="experience" aria-labelledby="experience-heading" className="scroll-mt-20 bg-[var(--paper)] px-6 py-16 sm:px-12">
+          <div className="mx-auto w-full max-w-7xl">
+            <div className="mb-8 flex w-full flex-col items-start gap-2">
+                <h2 id="experience-heading" tabIndex={-1} className="text-sm font-bold capitalize text-amber-900 focus:outline-none">03 / Where I&apos;ve Made An Impact</h2>
+                <p className="max-w-3xl text-3xl font-bold tracking-tight sm:text-4xl">Engineering, research, and community leadership grounded in practical outcomes.</p>
             </div>
 
-            <div className="w-full h-auto flex flex-col justify-start items-center">
+            <ol aria-label="Professional and community experience" className="w-full h-auto flex flex-col justify-start items-center">
                 {
+                    // Alternate cards around the center rail on large screens.
                     experienceData.map((experience, index) => (
-                        <div key={index} className={`w-full h-auto flex ${index % 2 === 0 ? "flex-row-reverse lg:flex-row" : "flex-row-reverse"}`}>
+                        <li key={`${experience.companyName}-${experience.position}`} className={`w-full h-auto flex ${index % 2 === 0 ? "flex-row-reverse lg:flex-row" : "flex-row-reverse"}`}>
                             <div className="w-full py-4 h-full flex justify-center items-center hover:scale-102 transition-all duration-300">
                                 <div className="w-full h-full bg-zinc-50 border border-black rounded-lg flex flex-col justify-start items-center p-6 text-center">
-                                    <p className="text-xs text-cyan-600 uppercase font-bold">{experience.dateRange}</p>
+                                    <p className="text-sm text-cyan-800 uppercase font-bold">{experience.dateRange}</p>
                                     <div className="w-24 h-12 mt-4 flex justify-center items-center">
-                                        <Image loading="eager" src={experience.companyLogo} alt={experience.companyName} className="w-auto h-full bg-contain rounded-md" />
+                                        <Image loading="lazy" src={experience.companyLogo} alt="" className="w-auto h-full object-contain rounded-md" />
                                     </div>
                                     <h3 className="text-2xl capitalize font-bold mt-4">{experience.position}</h3>
                                     <h4 className="text-lg capitalize">{experience.companyName}</h4>
-                                    <p className="text-sm mt-6">{experience.description}</p>
+                                    <ul className="mt-6 list-disc space-y-2 pl-5 text-left text-sm leading-relaxed">
+                                      {experience.achievements.map((achievement) => (
+                                        <li key={achievement}>{achievement}</li>
+                                      ))}
+                                    </ul>
                                     <p className="text-xs font-bold capitalize mt-8">{experience.highlights}</p>
                                 </div>
                             </div>
 
-                            <div className="relative w-auto pr-12 sm:px-12 h-full flex justify-center items-center">
-                                <div className="w-2 h-full bg-black" />
+                            <div aria-hidden="true" className="relative flex self-stretch items-center justify-center px-6 sm:px-12">
+                                <div className="absolute inset-y-0 w-2 bg-black" />
                                 <div className="absolute w-8 h-8 bg-lime-400 rounded-full" />
                             </div>
 
                             <div className="max-lg:hidden w-full h-full flex justify-center items-center">
                                 <div className="w-full h-full bg-transparent border-none">
-                                    {/* Empty Block */}
+                                    {/* Balances the alternating timeline layout. */}
                                 </div>
                             </div>
-                        </div>
+                        </li>
                     ))
                 }
-            </div>
+            </ol>
 
             {/* Background & Credentials Section */}
             <div className="mt-20 w-full flex flex-col gap-12 border-t border-black/20 pt-16">
                 <div className="w-full text-left">
-                    <h2 className="text-sm font-bold capitalize tracking-widest text-amber-900">
+                    <h3 className="text-sm font-bold capitalize tracking-widest text-amber-900">
                         Credentials & Capabilities
-                    </h2>
-                    <h3 className="text-3xl sm:text-4xl font-bold tracking-tight text-black mt-2">
-                        Skills, Education & Certifications
                     </h3>
+                    <p className="text-3xl sm:text-4xl font-bold tracking-tight text-black mt-2">
+                        Skills, Education & Certifications
+                    </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 items-stretch gap-8 md:grid-cols-2">
                     {/* Technical Skills & Stack */}
-                    <div className="bg-zinc-50 border border-black rounded-2xl p-6 sm:p-8 flex flex-col gap-6 shadow-sm">
+                    <div className="flex h-full flex-col gap-6 rounded-2xl border border-black bg-zinc-50 p-6 shadow-sm sm:p-8">
                         <h4 className="text-xl font-bold text-black flex items-center gap-2">
-                            <span className="h-2 w-2 rounded-full bg-lime-500" />
+                            <span aria-hidden="true" className="h-2 w-2 rounded-full bg-lime-500" />
                             Technical Expertise
                         </h4>
                         
                         <div className="flex flex-col gap-4 text-sm text-zinc-800">
                             <div>
-                                <span className="font-semibold text-black block mb-1">Languages & Web:</span>
+                                <h5 className="font-semibold text-black block mb-1">Languages & Web</h5>
                                 <p className="leading-relaxed">TypeScript, JavaScript, Python, Java, SQL, C# (.NET), HTML/CSS, React, Next.js, Node.js, Express.js, Tailwind CSS</p>
                             </div>
                             <div>
-                                <span className="font-semibold text-black block mb-1">Databases & Integrations:</span>
+                                <h5 className="font-semibold text-black block mb-1">Databases & Integrations</h5>
                                 <p className="leading-relaxed">PostgreSQL, SQL Server, MySQL, Redis, Prisma, Drizzle, REST APIs, NextAuth, Plaid, Pinecone, OpenAI API</p>
                             </div>
                             <div>
-                                <span className="font-semibold text-black block mb-1">Cloud, Tools & Testing:</span>
+                                <h5 className="font-semibold text-black block mb-1">Cloud, Tools & Testing</h5>
                                 <p className="leading-relaxed">AWS, Docker, Git/GitHub, CI/CD, Vercel, Firebase, Jest, JUnit, Cypress, Zod, Jira, Confluence</p>
                             </div>
                             <div>
-                                <span className="font-semibold text-black block mb-1">AI, Data & Automation:</span>
+                                <h5 className="font-semibold text-black block mb-1">AI, Data & Automation</h5>
                                 <p className="leading-relaxed">Power BI, Power Apps, Power Automate, SharePoint, Telerik Reporting, Pandas, TensorFlow, Keras</p>
                             </div>
                         </div>
                     </div>
 
                     {/* Education & Certifications */}
-                    <div className="flex flex-col gap-8">
+                    <div className="flex h-full flex-col gap-8 md:grid md:grid-rows-2">
                         {/* Education Card */}
-                        <div className="bg-zinc-50 border border-black rounded-2xl p-6 sm:p-8 flex flex-col gap-4 shadow-sm">
+                        <div className="flex flex-col gap-4 rounded-2xl border border-black bg-zinc-50 p-6 shadow-sm sm:p-8 md:h-full md:justify-center">
                             <h4 className="text-xl font-bold text-black flex items-center gap-2">
-                                <span className="h-2 w-2 rounded-full bg-cyan-600" />
+                                <span aria-hidden="true" className="h-2 w-2 rounded-full bg-cyan-700" />
                                 Education
                             </h4>
                             <div>
@@ -95,12 +103,12 @@ export default function Experience() {
                         </div>
 
                         {/* Certifications Card */}
-                        <div className="bg-zinc-50 border border-black rounded-2xl p-6 sm:p-8 flex flex-col gap-4 shadow-sm">
+                        <div className="flex flex-col gap-4 rounded-2xl border border-black bg-zinc-50 p-6 shadow-sm sm:p-8 md:h-full md:justify-center">
                             <h4 className="text-xl font-bold text-black flex items-center gap-2">
-                                <span className="h-2 w-2 rounded-full bg-lime-500" />
+                                <span aria-hidden="true" className="h-2 w-2 rounded-full bg-lime-500" />
                                 Certifications
                             </h4>
-                            <div className="flex flex-wrap gap-2">
+                            <ul className="flex flex-wrap gap-2" aria-label="Certifications">
                                 {[
                                     "AWS Certified Cloud Practitioner",
                                     "AWS Certified AI Practitioner",
@@ -108,16 +116,17 @@ export default function Experience() {
                                     "TensorFlow 2.0: Deep Learning & AI",
                                     "C# Unity Game Development 3D",
                                     "ChatGPT & AI in Microsoft Office"
-                                ].map((cert, idx) => (
-                                    <span key={idx} className="bg-black text-[#fff8dc] px-3 py-1.5 rounded-lg text-xs font-medium">
+                                ].map((cert) => (
+                                    <li key={cert} className="bg-black text-[#fff8dc] px-3 py-1.5 rounded-lg text-sm font-medium">
                                         {cert}
-                                    </span>
+                                    </li>
                                 ))}
-                            </div>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
+          </div>
         </section>
     )
 }

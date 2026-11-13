@@ -1,26 +1,36 @@
 {
   "name": "portfolio-website",
-  "version": "1.0.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
-  },
+  "version": "1.1.0",
   "dependencies": {
-    "next": "16.4.5",
-    "react": "19.3.0",
-    "react-dom": "19.3.0"
+    "next": "16.4.6",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "^1.65.0",
     "@tailwindcss/turbopack": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "16.4.5",
+    "eslint-config-next": "16.4.6",
+    "syncpack": "^15.3.3",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "deps:check": "syncpack lint",
+    "deps:fix": "syncpack fix",
+    "deps:format": "syncpack format",
+    "deps:list": "syncpack list",
+    "deps:update": "syncpack update",
+    "dev": "next dev",
+    "lint": "eslint",
+    "start": "next start",
+    "test:a11y": "playwright test tests/accessibility.spec.ts",
+    "test:a11y:ui": "playwright test tests/accessibility.spec.ts --ui"
   }
 }

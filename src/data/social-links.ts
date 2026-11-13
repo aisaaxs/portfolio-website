@@ -1,6 +1,7 @@
-import { footerInterface } from "@/src/shared/interfaces";
+import type { SocialLink } from "@/src/types/content";
 
-export const footerData: footerInterface[] = [
+// External profiles rendered in the site's footer.
+export const socialLinks: SocialLink[] = [
     {
         label: "GitHub",
         href: "https://github.com/aisaaxs/"

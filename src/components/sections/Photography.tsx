@@ -3,41 +3,41 @@
 import Image from "next/image";
 import { photographyData } from "@/src/data/photography";
 
+// Present selected photographs as tilted prints with details revealed on hover.
 export default function Photography() {
     return (
-        <section id="photography" className="scroll-mt-20 relative bg-black w-full h-auto p-12 flex flex-col">
-            <div className="z-10 w-full h-12 flex justify-start items-start">
-                <h2 className="text-sm font-bold capitalize text-[#fff8dc]">04 / See Through My Lens</h2>
+        <section id="photography" aria-labelledby="photography-heading" className="scroll-mt-20 relative flex w-full flex-col bg-[var(--night)] px-6 py-16 sm:px-12">
+            <div className="z-10 mx-auto mb-8 flex w-full max-w-7xl flex-col items-start gap-2">
+                <h2 id="photography-heading" tabIndex={-1} className="text-sm font-bold capitalize text-[#fff8dc] focus:outline-none">04 / See Through My Lens</h2>
+                <p className="max-w-3xl text-3xl font-bold tracking-tight text-[var(--paper)] sm:text-4xl">Small moments, changing light, and places worth noticing twice.</p>
             </div>
 
-            <div className="z-10 w-full h-auto flex flex-row flex-wrap justify-around items-center gap-x-8 gap-y-16 py-12">
+            <div className="z-10 mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 py-8 sm:grid-cols-2 xl:grid-cols-3">
+                {/* Alternate rotation to create the informal contact-sheet layout. */}
                 {photographyData.map((photo, index) => (
-                    <div 
-                        key={index} 
-                        className={`w-80 h-88 border-2 rounded-lg border-[#fff8dc] ${index % 2 === 0 ? "rotate-2" : "-rotate-2"} flex flex-col group`}
+                    <figure
+                        key={photo.title}
+                        className={`flex w-full flex-col overflow-hidden rounded-lg border-2 border-[#fff8dc] bg-[#fff8dc] motion-reduce:rotate-0 ${index % 2 === 0 ? "rotate-1" : "-rotate-1"}`}
                     >
-                        <div className="relative w-full h-5/6 overflow-hidden">
-                            <Image loading="eager" 
+                        <div className="relative aspect-[4/3] w-full overflow-hidden">
+                            <Image loading="lazy"
                                 src={photo.image} 
-                                alt={photo.title || "Photography sample"} 
-                                className="w-full h-full object-cover group-hover:scale-110 transition-all duration-300 rounded-t-md" 
+                                alt={photo.imageAlt}
+                                className="h-full w-full object-cover"
                             />
-
-                            <div className="hidden absolute z-50 top-0 left-0 w-full h-full bg-black/60 group-hover:flex flex-col justify-center items-center p-8 text-center gap-8">
-                                <p className="text-white text-md">{photo.description}</p>
-                                <p className="bg-black px-4 py-1 rounded-md text-cyan-300 text-sm">{photo.location}</p>
-                            </div>
                         </div>
 
-                        <div className="w-full h-1/6 flex justify-center items-center text-center bg-[#fff8dc]">
-                            <p className="text-md italic font-bold capitalize text-black">{photo.title}</p>
-                        </div>
-                    </div>
+                        <figcaption className="flex flex-col gap-3 bg-[#fff8dc] p-5 text-center text-black">
+                            <h3 className="text-lg font-bold capitalize italic">{photo.title}</h3>
+                            <p className="text-sm leading-relaxed">{photo.description}</p>
+                            <p className="text-sm font-semibold text-cyan-800">{photo.location}</p>
+                        </figcaption>
+                    </figure>
                 ))}
             </div>
 
             {/* Instagram Film Strip */}
-            <div className="relative z-10 mt-16 w-full overflow-hidden rounded-xl border border-zinc-600 bg-zinc-900 shadow-2xl">
+            <div className="relative z-10 mx-auto mt-16 w-full max-w-7xl overflow-hidden rounded-xl border border-zinc-600 bg-zinc-900 shadow-2xl">
                 {/* Top film perforations */}
                 <div
                     aria-hidden="true"
@@ -87,7 +87,6 @@ export default function Photography() {
                             href="https://www.instagram.com/ipic2capture"
                             target="_blank"
                             rel="noopener noreferrer"
-                            aria-label="Visit @ipic2capture on Instagram"
                             className="
                                 group inline-flex items-center justify-center gap-4
                                 rounded-lg border border-lime-400
@@ -101,9 +100,10 @@ export default function Photography() {
                             "
                         >
                             @iPic2Capture
-                            <span className="text-xl transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
+                            <span aria-hidden="true" className="text-xl transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
                                 ↗
                             </span>
+                            <span className="sr-only"> on Instagram (opens in a new tab)</span>
                         </a>
                     </div>
                 </div>
