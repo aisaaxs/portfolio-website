@@ -1,23 +1,32 @@
-import Navbar from "@/src/components/navbar";
-import About from "@/src/components/about";
-import Projects from "@/src/components/projects";
-import Experience from "@/src/components/experience";
-import Photography from "@/src/components/photography";
-// import Notebook from "@/src/components/notebook";
-import LetsTalk from "@/src/components/lets-talk";
-import Footer from "@/src/components/footer";
+import Footer from "@/src/components/layout/Footer";
+import Navbar from "@/src/components/layout/Navbar";
+import About from "@/src/components/sections/About";
+import Contact from "@/src/components/sections/Contact";
+import Experience from "@/src/components/sections/Experience";
+import Photography from "@/src/components/sections/Photography";
+import Projects from "@/src/components/sections/Projects";
+import Resume from "@/src/components/sections/Resume";
 
+// Compose the single-page portfolio in the same order used by the navigation.
 export default function Portfolio() {
   return (
-    <main id="scroll-container" className="relative w-screen h-screen flex flex-col pt-20 overflow-y-auto">
+    <>
+      <a className="skip-link" href="#main-content">
+        Skip to main content
+      </a>
       <Navbar />
-      <About />
-      <Projects />
-      <Experience />
-      <Photography />
-      {/* <Notebook /> */}
-      <LetsTalk />
+      <main id="main-content" tabIndex={-1} className="flex min-h-screen w-full flex-col pt-20 outline-none">
+        <h1 className="sr-only">
+          Anitej Isaac Sharma — Software Developer Portfolio
+        </h1>
+        <About />
+        <Resume />
+        <Projects />
+        <Experience />
+        <Photography />
+        <Contact />
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

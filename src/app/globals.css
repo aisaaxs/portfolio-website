@@ -1,6 +1,71 @@
 @import "tailwindcss";
 
+:root {
+  --paper: #fff8dc;
+  --ink: #101510;
+  --night: #172033;
+  --water: #087a98;
+  --water-light: #bdeaf2;
+  --forest: #185b32;
+  --leaf: #a3c51c;
+  --sun: #f4c928;
+  --bark: #b54b0a;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+/* Establish the warm paper-like canvas used throughout the portfolio. */
 body {
-  background-color: #fff8dc;
-  color: black;
+  background-color: var(--paper);
+  color: var(--ink);
+}
+
+/* Every keyboard-operable control needs a visible, high-contrast focus cue. */
+:where(a, button):focus-visible {
+  outline: 3px solid #0369a1;
+  outline-offset: 3px;
+}
+
+/* Keep the skip link out of sight until a keyboard user focuses it. */
+.skip-link {
+  position: fixed;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 100;
+  transform: translateY(-200%);
+  border-radius: 0.375rem;
+  background: #000;
+  color: #fff8dc;
+  padding: 0.75rem 1rem;
+  font-weight: 700;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+/* Honor the operating-system setting for people sensitive to motion. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* Preserve boundaries and focus cues in Windows forced-colors mode. */
+@media (forced-colors: active) {
+  :where(a, button):focus-visible {
+    outline: 3px solid Highlight;
+  }
 }

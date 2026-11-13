@@ -2,6 +2,7 @@ import { defineConfig, globalIgnores } from "eslint/config";
 import nextVitals from "eslint-config-next/core-web-vitals";
 import nextTs from "eslint-config-next/typescript";
 
+// Combine Next.js' accessibility/performance rules with its TypeScript rules.
 const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
